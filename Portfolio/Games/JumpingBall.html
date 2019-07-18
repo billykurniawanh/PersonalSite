@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+<title>Jumping Ball</title>
+</head>
+<body>
+<p align="center">
+     <canvas id="mycanvas"></canvas>
+</p>
+</body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+<script>
+    var sketchProc = function(processingInstance) {
+		with (processingInstance) {
+			size(600, 780); 
+			frameRate(30);    
+			
+			var height = 600;
+			var width = 600;
+			
+			var Ball = function(x, y) {
+				this.x = x;
+				this.y = y;
+				this.sticks = 0;
+				this.radius = 10;
+			};
+
+			Ball.prototype.draw = function() {
+				fill(255, 0, 0);
+				this.y = constrain(this.y, 0, height-10);
+				noStroke();
+				ellipse(this.x, this.y, this.radius*2, this.radius*2);				
+			};
+
+			Ball.prototype.hop = function() {
+				this.y -= 20;
+			};
+
+			Ball.prototype.fall = function() {
+				this.y += 2;
+			};
+
+			Ball.prototype.checkForStickGrab = function(stick) {
+				if ((stick.x >= this.x && stick.x <= (this.x + 20)) &&
+					(stick.y >= (this.y-20) && stick.y <= (this.y + 20))) {
+					stick.y = -400;   
+					this.sticks++;
+				}
+			};
+
+			Ball.prototype.checkForBadGrab = function(badStick) {
+				if ((badStick.x >= this.x && badStick.x <= (this.x+20)) && 
+					(badStick.y >= (this.y-20) && badStick.y <= (this.y+20))) {
+					badStick.y = -400;
+					this.sticks--;
+				}
+			};
+
+			var Stick = function(x, y) {
+				this.x = x;
+				this.y = y;
+			};
+
+			var badStick = function(x, y) {
+				this.x = x;
+				this.y = y;
+			};
+
+			Stick.prototype.draw = function() {
+				fill(0, 0, 0);
+				rectMode(CENTER);
+				rect(this.x, this.y, 5, 40);
+			};
+
+			badStick.prototype.draw = function() {
+				fill(0, 47, 255);
+				rectMode(CENTER);
+				rect(this.x, this.y, 5, 40);
+			};
+
+			var ball = new Ball(50, 620);
+			
+			var sticks = [];
+			for (var i = 0; i < 50; i++) {  
+				sticks.push(new Stick(i * 50 + 300, random(20, 260)+200));
+			}
+
+			var badSticks = [];
+			for (var i = 0; i < 50; i++) {
+				badSticks.push(new badStick(i * 100 + 300, random(220,260)+200));
+			}
+			
+			var Button = function(config) {
+				this.x = config.x || 0;
+				this.y = config.y || 0;
+				this.width = config.width || 80;
+				this.height = config.height || 50;
+				this.label = config.label || "Click";
+				this.color = config.color || color(207, 85, 85);
+				this.onClick = config.onClick || function() {};
+			 };
+
+			Button.prototype.draw = function() {
+				if (this.isMouseInside()) {
+					fill(255, 255, 255);
+				}
+				else {
+				   fill(this.color); 
+				}
+				rectMode(CENTER);
+				rect(this.x, this.y, this.width, this.height, 5);
+				fill(0, 0, 0);
+				textSize(19);
+				textAlign(CENTER, CENTER);
+				text(this.label, this.x, this.y);
+			};
+
+			Button.prototype.isMouseInside = function() {
+				return mouseX > this.x-this.width/2 &&
+				mouseX < (this.x + this.width/2) &&
+				mouseY > this.y - this.height/2 &&
+				mouseY < (this.y + this.height/2);
+			};
+
+			Button.prototype.handleMouseClick = function() {
+				if (this.isMouseInside()) {
+					this.onClick();
+				}
+			};
+			
+			mouseClicked = function() {
+				btn1.handleMouseClick();
+			};
+			
+			var btn1 = new Button({
+				x:50,
+				y:655,
+				width:50,
+				height:50,
+				color:color(255, 255, 255),
+				label:"Up",
+				onClick: function(){
+					ball.hop();
+				}
+			});
+				
+			draw = function() {
+				background(227, 254, 255);				rectMode(CORNER);
+				fill(255,255,255);
+				rect(0,0,width,90);
+				rect(0,690,width,90);
+				fill(130,79,43);
+				rect(0,620,width,70);
+				fill(144,245,0);
+				rect(0,600,width,20);
+				
+				for (var i = 0; i < sticks.length; i++) {
+					sticks[i].draw();
+					ball.checkForStickGrab(sticks[i]);
+					sticks[i].x -= 1;
+				}
+
+				for (var i =0; i < badSticks.length; i++) {
+					badSticks[i].draw();
+					ball.checkForBadGrab(badSticks[i]);
+					badSticks[i].x -= 1; 
+				} 
+				
+				btn1.draw();
+
+				textSize(30);
+				text("Score: " + ball.sticks, 80, 140);
+
+				if (ball.sticks >= 20) {
+					textSize(36);
+					text("YOU WIN", 350, 660);
+				}
+				
+				ball.fall();
+				ball.draw();
+			};
+		};
+	};
+
+    var canvas = document.getElementById("mycanvas"); 
+    var processingInstance = new Processing(canvas, sketchProc); 
+</script>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<title>Tic Tac Toe</title>
+</head>
+<body>
+<p align="center">
+     <canvas id="mycanvas"></canvas>
+</p>
+</body>
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+<script>
+    var sketchProc = function(processingInstance) {
+		with (processingInstance) {
+			size(600, 780); 
+			frameRate(30);    
+			
+			var playerTurn = 0;
+			var NUM_COLS = 3;
+			var NUM_ROWS = 3;
+			var SYMBOLS = ["X", "O"];
+			var element;
+			var status= false;
+			var winner;
+
+			var tiles = [];
+
+			var Tile = function(x, y) {
+				this.x = x;
+				this.y = y;
+				this.size = width/NUM_COLS;
+				this.label = "";
+			};
+
+			Tile.prototype.draw = function() {
+				fill(214, 247, 202);
+				strokeWeight(2);
+				rect(this.x, this.y, this.size, this.size, 10);
+				textSize(200);
+				textAlign(CENTER, CENTER);
+				fill(0, 0, 0);
+				text(this.label, this.x+this.size/2, this.y+this.size/2);
+			};
+
+			Tile.prototype.empty = function() {
+				return this.label === "";
+			};
+
+			Tile.prototype.onClick = function() {
+				if (!this.empty()) {
+					return;
+				}    
+
+				this.label=SYMBOLS[playerTurn];
+
+				playerTurn++;
+				if (playerTurn >= SYMBOLS.length) {
+					playerTurn = 0;
+				}    
+			};
+
+			Tile.prototype.handleMouseClick = function(x, y) {
+				if (x >= this.x && x <= this.x + this.size && y >= this.y && y <= this.y + this.size) {
+					this.onClick();
+				}
+			};
+			
+			for (var i = 0; i < NUM_COLS; i++) {
+				for (var j = 0; j < NUM_ROWS; j++) {
+					tiles.push(new Tile(i * (width/NUM_COLS-1), j * ((height-180)/NUM_ROWS-1) + 90));
+				}
+			}
+			
+			var drawTiles = function() {
+				for (var i in tiles) {
+					tiles[i].draw();
+				}
+			};
+			
+			var gameEnd = function(){
+				for (var i = 0; i < 3; i++){
+      				if ((tiles[i].label != "") && (tiles[i].label == tiles[i+3].label) && (tiles[i+3].label == tiles[i+6].label)){
+						status = true;
+						winner = tiles[i].label;
+					}
+				}
+				
+				for (var i = 0; i < 3; i++){
+      				if ((tiles[3*i].label != "") && (tiles[3*i].label == tiles[3*i+1].label) && (tiles[3*i+1].label == tiles[3*i+2].label)){
+						status = true;
+						winner = tiles[3*i].label;
+					}	
+				}
+				
+      			if ((tiles[0].label != "") && (tiles[0].label == tiles[4].label) && (tiles[4].label == tiles[8].label)){
+					status = true;
+					winner = tiles[0].label;
+				}
+         				
+				
+				if ((tiles[2].label != "") && (tiles[2].label == tiles[4].label) && (tiles[4].label == tiles[6].label)){
+					status = true;
+					winner = tiles[2].label;
+				}
+         				
+				if (status == true){
+					tiles[0].label = "'";
+					tiles[3].label = winner;
+					tiles[6].label = "'";
+					tiles[1].label = "H";
+					tiles[4].label = "A";
+					tiles[7].label = "S";
+					tiles[2].label = "W";
+					tiles[5].label = "O";
+					tiles[8].label = "N";
+				}	
+			};
+
+			mouseReleased = function() {
+				for (var i in tiles) {
+					tiles[i].handleMouseClick(mouseX, mouseY);
+				}
+			};
+
+			draw = function() {
+				background(255, 255, 255);
+				drawTiles();
+				gameEnd();
+			};
+
+		};
+	};
+
+    var canvas = document.getElementById("mycanvas"); 
+    var processingInstance = new Processing(canvas, sketchProc); 
+</script>
+</html>

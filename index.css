@@ -1,0 +1,39 @@
+/* CSS Document */
+
+html {
+	background-color: black;
+}
+#text1 {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 45%;
+	transform: translateY(-45%);
+	margin: auto;
+	font-size: 18vh;
+	text-align: center;
+	display: inline-block;
+	color: white;
+	font-family: arbutus;
+	font-weight: bold;
+}
+#button1 {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 60%;
+	transform: translateY(-60%);
+	margin: auto;
+	font-size: 4vh;
+	text-align: center;
+	display: inline-block;
+	color: black;
+	font-family: arbutus;
+	font-weight: bold;
+	border-radius: 3vh;
+	background-color: white;
+	height: 6vh;
+	width: 45vh;
+	line-height: 5vh;
+	padding-top: 1vh;
+}

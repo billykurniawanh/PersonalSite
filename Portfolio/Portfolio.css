@@ -1,0 +1,89 @@
+/* CSS Document */
+
+.jumbotron {
+	display: flex;
+	align-items: center;
+	background-image: url('https://kopislaw.com/wp-content/uploads/2016/03/unique-white-marble-background-5.jpg');
+	background-size: cover;
+	color: #ffffff;
+	height: 150px;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+.line {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+.lightBackground {
+	background-color: rgba(129,255,245,1.00);
+}
+.lightText {
+	color: rgba(129,255,245,1.00);
+}
+.logo {
+	padding-top: 1.5vw;
+	padding-left: 1.5vw;
+	padding-right: 1.5vw;
+}
+.text {
+	font-family: arbutus;
+	font-weight: bold;
+	text-align: center;
+}
+.caption {
+	font-family: arbutus;
+	font-weight: normal;
+	text-align: center;
+}
+#button1 {
+	font-family: arbutus;
+	font-weight: bold;
+	font-size: 2vw;
+	color: white;
+	background-color: rgba(129,255,245,1.00);
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	border: none;
+}
+#button2 {
+	font-family: arbutus;
+	font-weight: bold;
+	font-size: 2vw;
+	color: white;
+	background-color: rgba(129,255,245,1.00);
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	border: none;
+}
+#picture {
+	display: block;
+	align-items: center;
+	color: #ffffff;
+	width: 80vw;
+	text-shadow: 0.25px 0.25px 0.25px #000000;
+	position: relative;
+}
+#text1 {
+	font-family: arbutus;
+	font-weight: bold;
+	font-size: 3vw;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 11vw;
+	padding-right: 11vw;
+	text-align: center;
+}
+#text2 {
+	font-family: arbutus;
+	font-weight: bold;
+	font-size: 3vw;
+	color: white;
+	text-align: center;
+	padding-top: 1vw;
+}
