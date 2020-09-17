@@ -1,89 +1,130 @@
 /* CSS Document */
 
-.jumbotron {
-	display: flex;
-	align-items: center;
-	background-image: url('https://kopislaw.com/wp-content/uploads/2016/03/unique-white-marble-background-5.jpg');
-	background-size: cover;
-	color: #ffffff;
-	height: 150px;
-	margin-top: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
-	text-shadow: 0.25px 0.25px 0.25px #000000;
+/* Header */
+.box {
+  align-items: center;
+  padding: 10px;
+  margin: 10px 5px 20px;
+
+  border-top: 1px solid #f4f4f2;
+
+  -ms-box-shadow: 0 7px 0 #bfbaad, 0 0.5em 0 #a8a38c, 0 12px 12px #a8a38c;
+  -moz-box-shadow: 0 7px 0 #bfbaad, 0 0.5em 0 #a8a38c, 0 12px 12px #a8a38c;
+  -o-box-shadow: 0 7px 0 #bfbaad, 0 0.5em 0 #a8a38c, 0 12px 12px #a8a38c;
+  -webkit-box-shadow: 0 7px 0 #bfbaad, 0 0.5em 0 #a8a38c, 0 12px 12px #a8a38c;
+  box-shadow: 0 7px 0 #bfbaad, 0 0.5em 0 #a8a38c, 0 12px 12px #a8a38c;
+
+  -ms-border-radius: 0px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background-color: #4d4855;
+  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
 }
-.line {
-	height: 10px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
-}
-.lightBackground {
-	background-color: rgba(129,255,245,1.00);
-}
-.lightText {
-	color: rgba(129,255,245,1.00);
-}
-.logo {
-	padding-top: 1.5vw;
-	padding-left: 1.5vw;
-	padding-right: 1.5vw;
-}
+
+/* Text */
 .text {
-	font-family: arbutus;
-	font-weight: bold;
-	text-align: center;
+  font-family: arbutus;
+  font-weight: bold;
+  text-align: center;
 }
 .caption {
-	font-family: arbutus;
-	font-weight: normal;
-	text-align: center;
+  font-family: arbutus;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* Top Banner */
+.jumbotron {
+  display: flex;
+  align-items: center;
+  background-image: url('https://kopislaw.com/wp-content/uploads/2016/03/unique-white-marble-background-5.jpg');
+  background-size: cover;
+  height: 150px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-shadow: 2.5px 2.5px 2.5px #000000;
+}
+
+/* Picture and Two Buttons */
+#picture {
+  border: 10px solid #c7bdb1;
+  display: flex;
+  align-items: center;
+  width: 45vw;
+  border-radius: 50%;
+  float: left;
+  margin-left: 100px;
 }
 #button1 {
-	font-family: arbutus;
-	font-weight: bold;
-	font-size: 2vw;
-	color: white;
-	background-color: rgba(129,255,245,1.00);
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	border: none;
+  margin-top: 175px;
+  margin-left: 50px;
+  font-family: arbutus;
+  font-weight: bold;
+  font-size: 2vw;
+  color: #5a473a;
+  background-color: #c7bdb1;
+  border: none;
 }
 #button2 {
-	font-family: arbutus;
-	font-weight: bold;
-	font-size: 2vw;
-	color: white;
-	background-color: rgba(129,255,245,1.00);
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	border: none;
+  margin-left: 50px;
+  font-family: arbutus;
+  font-weight: bold;
+  font-size: 2vw;
+  color: #5a473a;
+  background-color: #c7bdb1;
+  border: none;
 }
-#picture {
-	display: block;
-	align-items: center;
-	color: #ffffff;
-	width: 80vw;
-	text-shadow: 0.25px 0.25px 0.25px #000000;
-	position: relative;
+
+/* Work Experience */
+.headshot {
+  flex-shrink: 0;
+  margin: 20px;
+  height: calc(150px + 6vw);
+  width: calc(150px + 6vw);
+  border: calc(8px + 0.2vw) solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-image: url(), linear-gradient(to bottom left, #5a473a, #c7bdb1);
+  text-align: center;
 }
+div.carousel-inner.my-inner {
+  border-top: 100px;
+  border-left: 100px;
+  border-right: 100px;
+  border-bottom: 100px;
+  border-color: #5a473a;
+  border-style: solid;
+}
+.headshot-1 {
+  border-radius: 10% 30%;
+}
+
+.headshot-2 {
+  border-radius: 30% 10%;
+}
+
 #text1 {
-	font-family: arbutus;
-	font-weight: bold;
-	font-size: 3vw;
-	color: white;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 11vw;
-	padding-right: 11vw;
-	text-align: center;
+  font-family: arbutus;
+  font-weight: bold;
+  font-size: 3vw;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 11vw;
+  padding-right: 11vw;
+  text-align: center;
 }
 #text2 {
-	font-family: arbutus;
-	font-weight: bold;
-	font-size: 3vw;
-	color: white;
-	text-align: center;
-	padding-top: 1vw;
+  font-family: arbutus;
+  font-weight: bold;
+  font-size: 3vw;
+  color: white;
+  text-align: center;
+  padding-top: 1vw;
 }
