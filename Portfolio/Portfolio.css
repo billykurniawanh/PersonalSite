@@ -38,8 +38,7 @@
 .jumbotron {
   display: flex;
   align-items: center;
-  background-image: url('https://kopislaw.com/wp-content/uploads/2016/03/unique-white-marble-background-5.jpg');
-  background-size: cover;
+  background-image: url(), linear-gradient(to bottom left, #5a473a, #c7bdb1);
   height: 150px;
   margin-top: 20px;
   margin-left: 20px;
