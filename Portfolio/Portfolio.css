@@ -3,8 +3,7 @@
 /* Header */
 .box {
   align-items: center;
-  padding: 10px;
-  margin: 10px 5px 20px;
+  margin: 1vw 1vw 1vw;
 
   border-top: 1px solid #f4f4f2;
 
@@ -59,7 +58,7 @@
   margin-left: 6vw;
 }
 #button1 {
-  margin-top: 12vw;
+  margin-top: 10vw;
   margin-left: 4vw;
   font-family: arbutus;
   font-weight: bold;
@@ -81,10 +80,10 @@
 /* Work Experience */
 .headshot {
   flex-shrink: 0;
-  margin: 20px;
-  height: calc(150px + 6vw);
-  width: calc(150px + 6vw);
-  border: calc(8px + 0.2vw) solid transparent;
+  margin: 2vw;
+  height: 15vw;
+  width: 15vw;
+  border: 0.2vw solid transparent;
   background-origin: border-box;
   background-clip: content-box, border-box;
   box-sizing: border-box;
@@ -114,7 +113,7 @@ div.carousel-inner.my-inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  grid-auto-rows: minmax(250px, auto);
+  grid-auto-rows: minmax(18vw, auto);
 }
 .one {
   grid-column: 1 / 3;
