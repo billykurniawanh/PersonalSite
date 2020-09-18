@@ -56,11 +56,11 @@
   width: 45vw;
   border-radius: 50%;
   float: left;
-  margin-left: 100px;
+  margin-left: 6vw;
 }
 #button1 {
-  margin-top: 175px;
-  margin-left: 50px;
+  margin-top: 12vw;
+  margin-left: 4vw;
   font-family: arbutus;
   font-weight: bold;
   font-size: 2vw;
@@ -69,7 +69,7 @@
   border: none;
 }
 #button2 {
-  margin-left: 50px;
+  margin-left: 4vw;
   font-family: arbutus;
   font-weight: bold;
   font-size: 2vw;
@@ -109,22 +109,129 @@ div.carousel-inner.my-inner {
   border-radius: 30% 10%;
 }
 
-#text1 {
-  font-family: arbutus;
-  font-weight: bold;
-  font-size: 3vw;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 11vw;
-  padding-right: 11vw;
-  text-align: center;
+/* Project Experience */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(250px, auto);
 }
-#text2 {
-  font-family: arbutus;
-  font-weight: bold;
-  font-size: 3vw;
-  color: white;
-  text-align: center;
-  padding-top: 1vw;
+.one {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  background-image: url(), linear-gradient(to bottom left, #c7bdb1, #ddd9d6);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  transition: all 0.2s ease-in-out;
+}
+.two {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  background-image: url(), linear-gradient(to bottom left, #c7bdb1, #ddd9d6);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  transition: all 0.2s ease-in-out;
+}
+.three {
+  grid-column: 1;
+  grid-row: 2;
+  background-image: url(), linear-gradient(to bottom left, #c7bdb1, #ddd9d6);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  transition: all 0.2s ease-in-out;
+}
+.four {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  background-image: url(), linear-gradient(to bottom left, #c7bdb1, #ddd9d6);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  transition: all 0.2s ease-in-out;
+}
+.five {
+  grid-column: 1;
+  grid-row: 3;
+  background-image: url(), linear-gradient(to bottom left, #c7bdb1, #ddd9d6);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  transition: all 0.2s ease-in-out;
+}
+.six {
+  grid-column: 3;
+  grid-row: 3;
+  background-image: url(), linear-gradient(to bottom left, #c7bdb1, #ddd9d6);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  transition: all 0.2s ease-in-out;
+}
+.one:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #5a473a;
+}
+.one:hover {
+  transform: scale(1.2);
+  color: #5a473a;
+  box-shadow: 0 0 5px #5a473a;
+  text-shadow: 0 0 5px #5a473a;
+}
+.two:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #5a473a;
+}
+.two:hover {
+  transform: scale(1.2);
+  color: #5a473a;
+  box-shadow: 0 0 5px #5a473a;
+  text-shadow: 0 0 5px #5a473a;
+}
+.three:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #5a473a;
+}
+.three:hover {
+  transform: scale(1.2);
+  color: #5a473a;
+  box-shadow: 0 0 5px #5a473a;
+  text-shadow: 0 0 5px #5a473a;
+}
+.four:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #5a473a;
+}
+.four:hover {
+  transform: scale(1.2);
+  color: #5a473a;
+  box-shadow: 0 0 5px #5a473a;
+  text-shadow: 0 0 5px #5a473a;
+}
+.five:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #5a473a;
+}
+.five:hover {
+  transform: scale(1.2);
+  color: #5a473a;
+  box-shadow: 0 0 5px #5a473a;
+}
+.six:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #5a473a;
+}
+.six:hover {
+  transform: scale(1.2);
+  color: #5a473a;
+  box-shadow: 0 0 5px #5a473a;
+  text-shadow: 0 0 5px #5a473a;
 }
