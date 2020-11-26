@@ -175,60 +175,60 @@ div.carousel-inner.my-inner {
   transition: all 0.2s ease-in-out;
 }
 .one:hover::before {
-  transform: scale(1.1);
+  transform: scale(1);
   box-shadow: 0 0 15px #5a473a;
 }
 .one:hover {
-  transform: scale(1.2);
+  transform: scale(1.02);
   color: #5a473a;
   box-shadow: 0 0 5px #5a473a;
   text-shadow: 0 0 5px #5a473a;
 }
 .two:hover::before {
-  transform: scale(1.1);
+  transform: scale(1);
   box-shadow: 0 0 15px #5a473a;
 }
 .two:hover {
-  transform: scale(1.2);
+  transform: scale(1.02);
   color: #5a473a;
   box-shadow: 0 0 5px #5a473a;
   text-shadow: 0 0 5px #5a473a;
 }
 .three:hover::before {
-  transform: scale(1.1);
+  transform: scale(1);
   box-shadow: 0 0 15px #5a473a;
 }
 .three:hover {
-  transform: scale(1.2);
+  transform: scale(1.02);
   color: #5a473a;
   box-shadow: 0 0 5px #5a473a;
   text-shadow: 0 0 5px #5a473a;
 }
 .four:hover::before {
-  transform: scale(1.1);
+  transform: scale(1);
   box-shadow: 0 0 15px #5a473a;
 }
 .four:hover {
-  transform: scale(1.2);
+  transform: scale(1.02);
   color: #5a473a;
   box-shadow: 0 0 5px #5a473a;
   text-shadow: 0 0 5px #5a473a;
 }
 .five:hover::before {
-  transform: scale(1.1);
+  transform: scale(1);
   box-shadow: 0 0 15px #5a473a;
 }
 .five:hover {
-  transform: scale(1.2);
+  transform: scale(1.02);
   color: #5a473a;
   box-shadow: 0 0 5px #5a473a;
 }
 .six:hover::before {
-  transform: scale(1.1);
+  transform: scale(1);
   box-shadow: 0 0 15px #5a473a;
 }
 .six:hover {
-  transform: scale(1.2);
+  transform: scale(1.02);
   color: #5a473a;
   box-shadow: 0 0 5px #5a473a;
   text-shadow: 0 0 5px #5a473a;
